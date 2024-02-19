@@ -20,3 +20,11 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
       - name: Execute Gradle build
         run: ./gradlew build
+  deploy_to_railway:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Railway
+        uses: jzeuzs/action-railway@v1.1.4
+        with:
+          # The Railway Token
+          railway_token: ${{secrets.railway_token}}
